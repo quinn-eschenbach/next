@@ -1,0 +1,15 @@
+.wrapper {
+        border: 1px solid black;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        transition: all 300ms;
+    }
+.wrapper:hover{
+    transform: scale(1.02);
+}
+.image{
+    width: 200px;
+}

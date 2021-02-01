@@ -1,0 +1,26 @@
+.wrapper{
+    width: 100%;
+}
+.wrapper > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    padding: 0 50px;
+    border: 1px solid black;
+    margin: 2px;
+}
+
+.item:hover {
+    background-color: black;
+    color: white;
+}
+
+.cartbutton{
+    float: right;
+}

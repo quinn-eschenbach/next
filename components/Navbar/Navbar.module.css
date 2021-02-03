@@ -1,5 +1,9 @@
 .wrapper{
     width: 100%;
+    position: fixed;
+    background-color: white;
+    border-bottom: 1px solid black;
+    display: flex;
 }
 .wrapper > ul {
     list-style-type: none;
@@ -8,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 
 .item{
@@ -22,5 +27,5 @@
 }
 
 .cartbutton{
-    float: right;
+    margin-right: 10px;
 }

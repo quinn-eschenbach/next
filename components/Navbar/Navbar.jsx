@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Link from 'next/link'
 import { Drawer, IconButton } from '@material-ui/core'
 import {ShoppingCart} from '@material-ui/icons'
 import Cart from './../Cart/Cart'
@@ -14,9 +15,9 @@ const Navbar = () => {
         <>
             <div className={styles.wrapper}>
                 <ul>
-                    <li><h3 className={styles.item}><a href="/">Home</a></h3></li>
-                    <li><h3 className={styles.item}><a href="/shop">Shop</a></h3></li>
-                    <li><h3 className={styles.item}><a href="/about">About</a></h3></li>
+                    <li><h3 className={styles.item}><Link href="/">Home</Link></h3></li>
+                    <li><h3 className={styles.item}><Link href="/shop">Shop</Link></h3></li>
+                    <li><h3 className={styles.item}><Link href="/about">About</Link></h3></li>
                 </ul>
                 <IconButton className={styles.cartbutton} onClick={toggle}>
                     <ShoppingCart />

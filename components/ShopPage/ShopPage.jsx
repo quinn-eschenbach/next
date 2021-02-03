@@ -9,8 +9,8 @@ const ShopPage = ({products}) => {
             <h1>Shop</h1>
             <Grid container spacing={3}>
                 {products.map(product => (
-                    <Grid item xs={4}>
-                        <ProductTeaser key={product.id} product={product} />
+                    <Grid key={product.id} item xs={4}>
+                        <ProductTeaser product={product} />
                     </Grid>
                 ))}
             </Grid>

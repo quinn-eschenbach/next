@@ -4,19 +4,22 @@ import { getProducts, addCartItem } from '../../../lib/api'
 import Navbar from './../../../components/Navbar/Navbar'
 
 const Product = ({product}) => {
-    
+    const [key, setKey] = useState(1)
     const addToCart = ()=>{
         const item = { 
             product_id: `${product.id}`,
             quantity: 1,
             return_cart: true
         }
-        addCartItem(item)
+        
+        addCartItem(item).then(()=>{
+            setKey(key + 1)
+        })
     }
    
     return (
         <>
-            <Navbar />
+            <Navbar key={key} />
             <div style={{height: '60px'}} />
             <h1>{product.name}</h1>
             <div dangerouslySetInnerHTML={{__html:product.description}}></div>

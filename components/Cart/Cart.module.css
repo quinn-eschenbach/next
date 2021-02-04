@@ -1,3 +1,28 @@
 .wrapper{
-    width: 300px
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
+
+.cartHeader{
+    display: flex;
+    align-items: center;
+}
+
+.itemWrapper{
+    height: 100%;
+    padding: 10px;
+    overflow: auto;
+}
+
+.cartFooter{
+    display: flex;
+    flex-direction: column;
+    padding: 10px
+}
+
+.buttonWrapper{
+    display: flex;
+}
+

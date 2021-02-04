@@ -1,10 +1,12 @@
 import React from 'react'
+import { Typography } from "@material-ui/core";
+import Navbar from './../components/Navbar/Navbar'
 
 const about = () => {
     return (
         <div>
-            <div style={{height: '60px'}} />
-            <h1>sind ehrenatzen schwöre</h1>
+            <Navbar />
+            <Typography variant="h1">sind ehrenatzen schwöre</Typography>
         </div>
     )
 }

@@ -1,23 +1,21 @@
 import Head from 'next/head'
+import { Typography } from "@material-ui/core";
 import {getProducts} from './../lib/api'
 import Navbar from './../components/Navbar/Navbar'
-import styles from '../styles/Home.module.css'
 
 export default function Home({products}) {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Next.js-Shop</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar/>
-      <main className={styles.main}>
-        <h1>HOMEPAGE ALTERRR</h1>
-      </main>
+        <Typography variant="h1">HOMEPAGE ALTERRR</Typography>
 
-      <footer className={styles.footer}>
+      <footer>
       </footer>
-    </div>
+    </>
   )
 }
 

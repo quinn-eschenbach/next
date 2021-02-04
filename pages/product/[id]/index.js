@@ -1,9 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import { Button } from '@material-ui/core'
+import { Button, Typography, Grid } from '@material-ui/core'
 import { getProducts, addCartItem } from '../../../lib/api'
 import Navbar from './../../../components/Navbar/Navbar'
+import Carousel from '@brainhubeu/react-carousel'
+import '@brainhubeu/react-carousel/lib/style.css'
 
 const Product = ({product}) => {
+
     const [key, setKey] = useState(1)
     const addToCart = ()=>{
         const item = { 
@@ -20,11 +23,24 @@ const Product = ({product}) => {
     return (
         <>
             <Navbar key={key} />
-            <div style={{height: '60px'}} />
-            <h1>{product.name}</h1>
-            <div dangerouslySetInnerHTML={{__html:product.description}}></div>
-            <div style={{backgroundImage: `url(${product.images[0].src})`, width: '500px', height: '500px'}}></div>
-            <Button variant="contained" color="primary" onClick={()=>{addToCart()}}>Kaufen</Button>
+            <Typography variant="h1">{product.name}</Typography>
+            <Grid container>
+                <Grid item xs={12} md={6}>
+                    <Carousel plugins={['arrows']}>
+                        {
+                            product.images.map(image=>(
+                                <img key={image} src={image.src}/>
+                            ))
+                        }
+                    </Carousel>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                        <div dangerouslySetInnerHTML={{__html:product.description}} />
+                        <Button variant="contained" color="primary" onClick={()=>{addToCart()}}>Kaufen</Button>
+                </Grid>
+            </Grid>
+            
+            
         </>
     )
 }

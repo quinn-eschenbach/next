@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { Grid, Typography, Divider, TextField, FormGroup, FormControlLabel, Checkbox, IconButton, Paper, Button } from '@material-ui/core'
 import ProductTeaser from './../ProductTeaser/ProductTeaser'
 import styles from './ShopPage.module.css'
@@ -83,7 +84,7 @@ const ShopPage = ({ products }) => {
                     <TextField className={styles.searchBar} id="search" label="Suche" variant="outlined" onChange={e => setSearch(e.target.value)}/>
                 </div>
                 <FormGroup row className={styles.checkBoxWrapper}>
-                    <Button variant="contained" color="secondary" style={{ marginRight: 10 }}>Passendes Produkt finden</Button>
+                    <Link href="/productfinder"><Button variant="contained" color="secondary" style={{ marginRight: 10 }}>Passendes Produkt finden</Button></Link>
                     {
                         categories.map(category => (
                             <Paper className={styles.checkBox}>

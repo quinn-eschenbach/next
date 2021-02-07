@@ -98,8 +98,6 @@ const ShopPage = ({ products }) => {
                     }
 
                 </FormGroup>
-
-                <p>{search}</p>
             </div>
             <Divider />
             <div style={{ height: '10px' }} />

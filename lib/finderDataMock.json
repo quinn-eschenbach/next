@@ -1,0 +1,24 @@
+{
+    "types":[
+        {
+            "name": "hauttyp",
+            "question": "Welcher Hauttyp bescheibt Sie am besten?"
+        },
+        {
+            "name": "bereich",
+            "question": "Welche Stelle des Körper soll gepflegt werden?"
+        },
+        {
+            "name": "alter",
+            "question": "Wer ist der James Bond deiner Kindheit?"
+        },
+        {
+            "name": "produktart",
+            "question": "Welche Art von Pflegeprodukt suchen Sie?"
+        },
+        {
+            "name": "problem",
+            "question": "Was versprechen Sie sich von ihrem Produkt?"
+        }
+    ]
+}

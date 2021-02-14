@@ -1,0 +1,290 @@
+{
+    "produkte" : [
+        {
+            "id": 1,
+            "name":"Cells Secret",
+            "categories": [
+                {
+                    "type": "hauttyp",
+                    "values": ["normale Haut"]
+                },
+                {
+                    "type": "bereich",
+                    "values": ["Hände","Körper"]
+                },
+                {
+                    "type": "alter",
+                    "values": ["Daniel Craig"]
+                },
+                {
+                    "type": "produktart",
+                    "values": ["Lotion"]
+                },
+                {
+                    "type": "problem",
+                    "values":["Beugt Rötungen vor"]
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name":"Body Cream",
+            "categories": [
+                {
+                    "type": "hauttyp",
+                    "values": ["oelige Haut"]
+                },
+                {
+                    "type": "bereich",
+                    "values": ["Gesicht"]
+                },
+                {
+                    "type": "alter",
+                    "values": ["Sean Connery"]
+                },
+                {
+                    "type": "produktart",
+                    "values": ["Creme"]
+                },
+                {
+                    "type": "problem",
+                    "values":["Nährt und schützt das Gesicht"]
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name":"Serum Cream",
+            "categories": [
+                {
+                    "type": "hauttyp",
+                    "values": ["trockene Haut"]
+                },
+                {
+                    "type": "bereich",
+                    "values": ["Gesicht","Körper", "Hände"]
+                },
+                {
+                    "type": "alter",
+                    "values": ["Sean Connery"]
+                },
+                {
+                    "type": "produktart",
+                    "values": ["Lotion"]
+                },
+                {
+                    "type": "problem",
+                    "values":["Beugt Cellulite vor"]
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name":"Micellar Water",
+            "categories": [
+                {
+                    "type": "hauttyp",
+                    "values": ["trockene Haut"]
+                },
+                {
+                    "type": "bereich",
+                    "values": ["Gesicht"]
+                },
+                {
+                    "type": "alter",
+                    "values": ["Sean Connery"]
+                },
+                {
+                    "type": "produktart",
+                    "values": ["Lotion"]
+                },
+                {
+                    "type": "problem",
+                    "values":["Macht glatte Haut"]
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name":"Face Serum",
+            "categories": [
+                {
+                    "type": "hauttyp",
+                    "values": ["oelige Haut"]
+                },
+                {
+                    "type": "bereich",
+                    "values": ["Hände"]
+                },
+                {
+                    "type": "alter",
+                    "values": ["Daniel Craig"]
+                },
+                {
+                    "type": "produktart",
+                    "values": ["Seife"]
+                },
+                {
+                    "type": "problem",
+                    "values":["stärkt Bindegewebe"]
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "name":"Micellar Water",
+            "categories": [
+               {
+                    "type": "hauttyp",
+                    "values": ["trockene Haut", "normale Haut", "oelige Haut"]
+                },
+                {
+                    "type": "bereich",
+                    "values": ["Gesicht","Körper", "Hände"]
+                },
+                {
+                    "type": "alter",
+                    "values": ["Sean Connery", "Daniel Craig"]
+                },
+                {
+                    "type": "produktart",
+                    "values": ["Lotion"]
+                },
+                {
+                    "type": "problem",
+                    "values":["Vitalisiert die Poren"]
+                } 
+            ]
+        },
+        {
+            "id": 7,
+            "name":"Face Cream",
+            "categories": [
+                {
+                    "type": "hauttyp",
+                    "values": ["oelige Haut"]
+                },
+                {
+                    "type": "bereich",
+                    "values": ["Körper"]
+                },
+                {
+                    "type": "alter",
+                    "values": ["Sean Connery"]
+                },
+                {
+                    "type": "produktart",
+                    "values": ["Seife"]
+                },
+                {
+                    "type": "problem",
+                    "values":["Beugt Alterflecken vor"]
+                }
+            ]
+        },
+        {
+            "id": 8,
+            "name":"Face Mask",
+            "categories": [
+               {
+                    "type": "hauttyp",
+                    "values": ["trockene Haut", "normale Haut"]
+                },
+                {
+                    "type": "bereich",
+                    "values": ["Gesicht","Hände"]
+                },
+                {
+                    "type": "alter",
+                    "values": ["Sean Connery", "Daniel Craig"]
+                },
+                {
+                    "type": "produktart",
+                    "values": ["Creme"]
+                },
+                {
+                    "type": "problem",
+                    "values":["Strafft Falten"]
+                } 
+            ]
+        },
+        {
+            "id": 9,
+            "name":"Face Scrub",
+            "categories": [
+                {
+                    "type": "hauttyp",
+                    "values": ["oelige Haut"]
+                },
+                {
+                    "type": "bereich",
+                    "values": ["Gesicht","Körper"]
+                },
+                {
+                    "type": "alter",
+                    "values": ["Daniel Craig"]
+                },
+                {
+                    "type": "produktart",
+                    "values": ["Creme"]
+                },
+                {
+                    "type": "problem",
+                    "values":["Schützt vor Nerodermitis"]
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "name":"Hand Creme",
+            "categories": [
+                {
+                    "type": "hauttyp",
+                    "values": ["normale Haut"]
+                },
+                {
+                    "type": "bereich",
+                    "values": ["Hände"]
+                },
+                {
+                    "type": "alter",
+                    "values": ["Daniel Craig"]
+                },
+                {
+                    "type": "produktart",
+                    "values": ["Creme"]
+                },
+                {
+                    "type": "problem",
+                    "values":["Lässt die Zellen erstrahlen"]
+                }
+            ]
+        },
+        {
+            "id": 11,
+            "name":"Foot Creme",
+            "categories": [
+                {
+                    "type": "hauttyp",
+                    "values": ["trockene Haut"]
+                },
+                {
+                    "type": "bereich",
+                    "values": ["Körper"]
+                },
+                {
+                    "type": "alter",
+                    "values": ["Sean Connery", "Daniel Craig"]
+                },
+                {
+                    "type": "produktart",
+                    "values": ["Lotion"]
+                },
+                {
+                    "type": "problem",
+                    "values":["Macht die Füße seidig glänzend"]
+                }
+            ]
+        }
+    ]
+}

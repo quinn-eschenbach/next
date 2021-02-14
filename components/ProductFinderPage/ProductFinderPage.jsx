@@ -1,147 +1,141 @@
 import React, { useState, useEffect } from 'react'
 import { Typography, LinearProgress, Paper, Divider, Card, CardContent, CardMedia, Grid } from '@material-ui/core'
 import styles from './ProductFinderPage.module.css'
+import { produkte } from './../../lib/produkteMock.json'
+import { types } from './../../lib/finderDataMock.json'
 
-const fragen = [
-    {
-        frage: "Wo brennts denn?",
-        antworten: [
-            {
-                titel: "Schwabbelbauch",
-                imgurl: "https://placeimg.com/300/300/tech",
-                value: "Du bist derart fett, unförmig und haarig das selbst Chewbacca vor dir wegläuft"
-            },
-            {
-                titel: "Stinkefüße",
-                imgurl: "https://placeimg.com/300/300/arch",
-                value: "Du hast einen käsig-kotzig duftenden Strinkefuß der perversesten Sorte"
-            },
-            {
-                titel: "Langweiler",
-                imgurl: "https://placeimg.com/300/300/animals",
-                value: "Du bist der langweiligste Bastard der jemals Fuß auf diese Erde gesetzt hat"
+
+const ProductFinderPage = ({ productsProps }) => {
+    const [products, setProducts] = useState(produkte)
+    const [currentQuestion, setCurrentQuestion] = useState("Loading")
+    const [currentAnswers, setCurrentAnswers] = useState(["Loading"])
+    const [asked, setAsked] = useState(["problem"])
+
+    const getQuestion = () => {
+        if (products.length > 1) {
+            let type = getType()
+
+            if (products.length < 4) {
+                type = "problem"
             }
-        ]
-    },
-    {
-        frage: "Wer ist schuld?",
-        antworten: [
-            {
-                titel: "Merkel",
-                imgurl: "https://placeimg.com/300/300/animals",
-                value: "ist natürlich der CEO der Deutschland GmbH, Angelo Merkel!"
-            },
-            {
-                titel: "Die Reptoloiden",
-                imgurl: "https://placeimg.com/300/300/nature",
-                value: "sind die Reptoloiden geführt von Bill Gates!"
-            },
-            {
-                titel: "Deine Mutter",
-                imgurl: "https://placeimg.com/300/300/people",
-                value: "ist deine Mutter, wer denn auch sonst? "
-            }
-        ]
-    },
-    {
-        frage: "Was machen wir jetzt?",
-        antworten: [
-            {
-                titel: "Die Luft ganz lange anhalten",
-                imgurl: "https://placeimg.com/300/300/nature",
-                value: "die Luft anhalten, bis der Kopf platzt! Hat ja damals mit 4 Jahren immer gut geklappt!"
-            },
-            {
-                titel: "Den Kopf in den Sand stecken",
-                imgurl: "https://placeimg.com/300/300/arch",
-                value: "den Kopf im Sand verstecken und hoffen das keiner in der Arschritze landet (unangenehm)"
-            },
-            {
-                titel: "Dicke Bretter ballern",
-                imgurl: "https://placeimg.com/300/300/animals",
-                value: "ballern bis die Nase blutet und dann im K-Hole abtauchen, Ahoi!"
-            }
-        ]
-    }
-]
 
-const ProductFinderPage = () => {
-    const [progress, setProgess] = useState(0)
-    const [current, setCurrent] = useState({
-        frage: "Loading",
-        antworten: []
-    })
-    const [counter, setCounter] = useState(0)
-    const [answers, setAnswers] = useState([])
-
-    const setCurrentQuestion = () => {
-        if (counter < fragen.length) {
-            setCurrent(fragen[counter])
-
-        } else {
-            setCurrent({
-                frage: "Auswertung:",
-                antworten: []
+            types.map(item => {
+                if (item.name == type) {
+                    setCurrentQuestion(item.question)
+                    findAnswers(type)
+                    pushAseked(type)
+                }
             })
+        } else {
+            alert(`Das Perfekte Produkt für Sie: ${products[0].name}`)
+            location.reload()
         }
 
     }
-    const calcProgress = () => {
-        let progr = ((counter) / fragen.length) * 100
-        console.log(progr)
-        setProgess(progr)
-    }
-    const onClick = value => {
-        let newAnswers = answers
-        newAnswers.push(value)
-        setAnswers(newAnswers)
-        if (counter < fragen.length) {
-            setCounter(counter + 1)
 
-        }
+    const getType = () => {
+        let type
+        products[0].categories.slice(0).reverse().map(cat => {
+            if (!asked.includes(cat.type)) {
+                type = cat.type
+                return
+            }
+        })
+        return type
     }
+
+    const pushAseked = type => {
+        const cache = asked
+        cache.push(type)
+        setAsked(cache)
+    }
+
+    const filterProducts = filter => {
+        const filteredProducts = []
+        products.map(product => {
+            product.categories.map(cat => {
+                if (cat.values.includes(filter)) {
+                    filteredProducts.push(product)
+                }
+            })
+        })
+        setProducts(filteredProducts)
+    }
+
+    const findAnswers = type => {
+        const answerArray = []
+        products.map(product => {
+            product.categories.map(cat => {
+                if (cat.type == type && answerArray.length < 3) {
+                    cat.values.map(val => {
+                        if (!answerArray.includes(val)) {
+                            answerArray.push(val)
+                        }
+                    })
+                }
+            })
+        })
+        setCurrentAnswers(answerArray)
+    }
+
+    const getImage = () => "https://picsum.photos/300"
 
     useEffect(() => {
-        setCurrentQuestion()
-        calcProgress()
-    }, [counter])
+        getQuestion()
+    }, [products])
 
     return (
         <div className={styles.wrapper}>
             <Typography variant="h1">PRODUKTFINDER</Typography>
             <Paper className={styles.paper}>
-                    <Typography variant="h3">{current.frage}</Typography>
-                    <LinearProgress variant="determinate" value={progress} />
-                    <Divider />
-                    <div style={{height: "20px"}}/>
-                    <Grid container spacing="5">
-                        {
-                            current.antworten.map(answer => (
-                                <Grid item xs={4}>
-                                    <Card className={styles.card} onClick={() => onClick(answer.value)}>
-                                        <CardContent>
-                                            <CardMedia
-                                                image={answer.imgurl}
-                                                style={{
-                                                    height: "300px"
-                                                }}
-                                            />
-                                            <Typography variant="h5">{answer.titel}</Typography>
-                                        </CardContent>
-                                    </Card>
-                                </Grid>
-                            ))
-                        }
-                    </Grid>
+                <Typography variant="h3">{currentQuestion}</Typography>
+                <LinearProgress variant="determinate" value={10} />
+                <Divider />
+                <div style={{ height: "20px" }} />
+                <Grid container spacing={5}>
                     {
-                        answers.length == fragen.length && (
-                            <div className={styles.evaluation}>
-                                <Typography variant="h5">{`${answers[0]} und schuld ${answers[1]} Darum werden wir ${answers[2]}`}</Typography>
-                            </div>
-                        )
+                        currentAnswers.map(answer => (
+                            <Grid item xs={4}>
+                                <Card className={styles.card} onClick={() => filterProducts(answer)}>
+                                    <CardContent>
+                                        <CardMedia
+                                            image={getImage()}
+                                            style={{
+                                                height: "300px"
+                                            }}
+                                        />
+                                        <Typography variant="h5">{answer}</Typography>
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        ))
                     }
-            </Paper>
+                </Grid>
 
+            </Paper>
+            <table style={{width:"100%"}}>
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>Hauttyp</th>
+                        <th>Bereich</th>
+                        <th>Alter</th>
+                        <th>Produktart</th>
+                        <th>Problem</th>
+                    </tr>
+                    {
+                        products.map(product => (
+                            <tr>
+                                <td>{product.name}</td>
+                                {
+                                    product.categories.map(cat => <td> {cat.values.join(',')}</td>)
+                                }
+
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
         </div>
     )
 }

@@ -7,8 +7,7 @@ const productfinder = ({products}) => {
     
     return (
         <>
-        <Navbar />
-        <ProductFinderPage productsProps={products}/>
+          <ProductFinderPage productsProps={products}/>
         </>
     )
 }

@@ -40,9 +40,9 @@ const ShopPage = ({ products }) => {
     }
 
     const isSearchResult = product => {
-        if(search.length > 2){
+        if (search.length > 2) {
             let bool = true
-            if(!product.name.toLowerCase().includes(search.toLowerCase())){
+            if (!product.name.toLowerCase().includes(search.toLowerCase())) {
                 bool = false
             }
             return bool
@@ -77,43 +77,65 @@ const ShopPage = ({ products }) => {
 
 
     return (
-        <div className={styles.wrapper}>
-            <Typography variant="h1">SHOP</Typography >
-            <div className={styles.filterWrapper}>
-                <div className={styles.searchWrapper}>
-                    <TextField className={styles.searchBar} id="search" label="Suche" variant="outlined" onChange={e => setSearch(e.target.value)}/>
-                </div>
-                <FormGroup row className={styles.checkBoxWrapper}>
-                    <Link href="/productfinder"><Button variant="contained" color="secondary" style={{ marginRight: 10 }}>Passendes Produkt finden</Button></Link>
-                    {
-                        categories.map(category => (
-                            <Paper className={styles.checkBox}>
-                                <FormControlLabel
-                                    label={category}
-                                    control={
-                                        <Checkbox onClick={e => filterClicked(e, category)} />
-                                    }
-                                />
-                            </Paper>
-                        ))
-                    }
+        <Grid className={styles.wrapper} container>
+            <Grid item xs={3}>
+                <Paper className={styles.filterWrapper} variant="outlined" square>
+                    <div className={styles.searchWrapper}>
+                        <TextField id="search" label="Suche" onChange={e => setSearch(e.target.value)} />
+                    </div>
+                    <FormGroup >
 
-                </FormGroup>
-            </div>
-            <Divider />
-            <div style={{ height: '10px' }} />
-            <Grid container spacing={3} className={styles.productWrapper}>
-                {products.map(product => {
-                    if (isFilterResult(product) && isSearchResult(product)) {
-                        return (
-                            <Grid key={product.id} item xs={4}>
-                                <ProductTeaser product={product} />
-                            </Grid>
-                        )
-                    }
-                })}
+                        {
+                            categories.map(category => (
+                                <Paper key={category} className={styles.checkBox} variant="outlined" square>
+                                    <FormControlLabel
+                                        label={category}
+                                        control={
+                                            <Checkbox onClick={e => filterClicked(e, category)} />
+                                        }
+                                    />
+                                </Paper>
+                            ))
+                        }
+
+                    </FormGroup>
+                </Paper>
             </Grid>
-        </div>
+            <Grid item xs={9}>
+                <Paper className={styles.teaser} variant="outlined" square style={{ background: "linear-gradient(180deg, rgba(12,128,222,1) 0%, rgba(89,179,252,1) 100%)" }}>
+                    <Grid container>
+                        <Grid item xs={6} className={styles.teasercontent}>
+                            <Typography variant="h1">Shop</Typography>
+                            <Typography variant="h5" gutterBottom>Entdecke Hautverträgliche Pflegeprodukte oder nutze useren einzigartigen Produktefinder:</Typography>
+                            <Link href="/productfinder"><Button variant="contained" color="secondary" >jetzt Passendes Produkt finden</Button></Link>
+                        </Grid>
+                        <Grid item xs={6} >
+                            <div className={styles.teaserimage}></div>
+                        </Grid>
+                    </Grid>
+
+                </Paper>
+
+                <div className={styles.wrapperproducts}>
+
+                    <Grid container spacing={3} className={styles.productWrapper}>
+                        {products.map(product => {
+                            if (isFilterResult(product) && isSearchResult(product)) {
+                                return (
+                                    <Grid key={product.id} item xs={4}>
+                                        <ProductTeaser product={product} />
+                                    </Grid>
+                                )
+                            }
+                        })}
+                    </Grid>
+                </div>
+
+            </Grid>
+
+
+
+        </Grid>
     )
 }
 

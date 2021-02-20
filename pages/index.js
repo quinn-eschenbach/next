@@ -10,7 +10,6 @@ export default function Home({products}) {
         <title>Next.js-Shop</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar/>
         <Typography variant="h1">HOMEPAGE ALTERRR</Typography>
 
       <footer>

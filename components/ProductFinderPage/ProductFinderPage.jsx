@@ -23,7 +23,7 @@ const ProductFinderPage = ({ productsProps }) => {
                 if (item.name == type) {
                     setCurrentQuestion(item.question)
                     findAnswers(type)
-                    pushAseked(type)
+                    pushAsked(type)
                 }
             })
         } else {
@@ -44,7 +44,7 @@ const ProductFinderPage = ({ productsProps }) => {
         return type
     }
 
-    const pushAseked = type => {
+    const pushAsked = type => {
         const cache = asked
         cache.push(type)
         setAsked(cache)

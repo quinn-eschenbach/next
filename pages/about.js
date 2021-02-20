@@ -5,9 +5,8 @@ import Navbar from './../components/Navbar/Navbar'
 const about = () => {
     return (
         <div>
-            <Navbar />
-            <Typography variant="h1">sind ehrenatzen schwöre</Typography>
-        </div>
+            <Typography variant="h1" > sind ehrenatzen schwöre </Typography>
+        </ div>
     )
 }
 

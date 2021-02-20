@@ -1,21 +1,36 @@
 .wrapper{
     padding: 0 20px;
+    display: flex;
 }
 .filterWrapper{
-    padding: 10px 0;
-    z-index: 1;
+    margin: 20px;
+    padding: 10px;
+    position: sticky;
+    top: 75px;
 }
 .searchWrapper{
-    display: flex;
-    width: 100%;
-}
-.searchBar{
-    width: 100%;
+    margin-bottom: 10px;
 }
 .checkBox{
     padding: 0 5px;
-    margin-right: 10px;
+    margin-bottom: 10px;
+    width: fit-content;
 }
-.checkBoxWrapper{
-    margin: 10px 0
+.teaser{
+    margin: 20px 0;   
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+.teaserimage{
+    background-image: url("https://ageuta-cosmetics.com/wp-content/uploads/2021/02/Design-ohne-Titel-2.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    margin-bottom: -10px;
+}
+.teasercontent{
+    padding: 10px;
 }

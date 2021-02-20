@@ -1,32 +1,48 @@
-.wrapper{
+.wrapper {
     width: 100%;
     top: 0;
     position: sticky;
     background-color: white;
     display: flex;
-    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
     z-index: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
+
+.logowrapper {
+    background-image: url(https://ageuta-cosmetics.com/wp-content/uploads/2021/01/Logo-Dark.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 60px;
+    width: max-content;
+    margin-right: auto;
+    width: 200px;
+}
+
 .linkWrapper {
-    margin: 0;
+    width: 1400px;
+    margin: auto;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
 }
 
-.item{
+.item {
+    display: flex;
+    align-items: center;
+    height: 60px;
     padding: 0 50px;
     margin: 2px;
     cursor: pointer;
+    border-bottom: 3px solid transparent;
 }
 
 .item:hover {
     border-bottom: 3px solid black;
 }
 
-.cartbutton{
+#cartbutton {
     margin-right: 10px;
+    margin-left: auto;
 }
-

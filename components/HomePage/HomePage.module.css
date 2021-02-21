@@ -1,0 +1,38 @@
+.aglaia{
+    background-image: url("https://ageuta-cosmetics.com/wp-content/uploads/2021/01/beauty-face-woman-with-cosmetic-cream-face_118454-1034.jpg");
+    height: 100%;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 300ms;
+}
+
+.equilibrio{
+    background-image: url("https://ageuta-cosmetics.com/wp-content/uploads/2021/01/smiley-older-woman-using-moisturizer-her-face_23-2148672372.jpg");
+    height: 100%;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    transition: all 300ms;
+}
+
+.innerborder{
+    /*border: 8px solid rgba(255, 255, 255, 0.1);*/
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    justify-content: flex-end;
+}
+
+.aglaia:hover{
+    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.equilibrio:hover{
+    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+}

@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Typography } from "@material-ui/core";
 import {getProducts} from './../lib/api'
-import Navbar from './../components/Navbar/Navbar'
+import HomePage from './../components/HomePage/HomePage'
 
 export default function Home({products}) {
   return (
@@ -10,7 +10,7 @@ export default function Home({products}) {
         <title>Next.js-Shop</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <Typography variant="h1">HOMEPAGE ALTERRR</Typography>
+        <HomePage products={products}/>
 
       <footer>
       </footer>

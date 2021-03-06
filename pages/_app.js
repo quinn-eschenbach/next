@@ -2,14 +2,14 @@ import '../styles/globals.css'
 import { ThemeProvider } from '@material-ui/core'
 import theme from "./../styles/theme"
 import Navbar from './../components/Navbar/Navbar'
+import {ProvideCart} from './../lib/context/cart'
 
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
-      <main>
-        <Component {...pageProps} />
-      </main>      
+        <ProvideCart>
+          <Component {...pageProps} />
+        </ProvideCart>        
     </ThemeProvider>
   )
 }

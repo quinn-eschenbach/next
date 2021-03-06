@@ -1,46 +1,29 @@
-import React, {useState, useEffect} from 'react'
-import{ Typography, Button, Card, CardActions, CardContent, CardMedia, CircularProgress } from '@material-ui/core'
-
+import React, { useState, useEffect } from 'react'
+import { Typography, Button, Paper, IconButton, CircularProgress } from '@material-ui/core'
+import { Clear, Add, Remove } from "@material-ui/icons"
+import { useCart } from './../../../lib/context/cart'
 import styles from './CartItem.module.css'
 
-const CartItem = ({item, itemPlus, itemMinus, itemDelete}) => {
-    const [isLoading, setIsLoading] = useState(false)
-
-    const clickMinus = ()=> {
-        itemMinus({product_id : `${item.product_id}`,quantity: item.quantity,key:  item.key })
-        setIsLoading(true)
-    }
-
-    const clickPlus = () => {
-        itemPlus(item.product_id)
-        setIsLoading(true)
-    }
-
-    const clickRemove = () => {
-        itemDelete(item.key)
-        setIsLoading(true)
-    }
-
-    useEffect(() => {
-        setIsLoading(false)
-    }, [item])
+const CartItem = ({ item }) => {
+    const { addItem, removeItem, deleteItem, isLoading } = useCart()
 
     return (
-        <Card className={styles.item}>
-            <CardContent>
-                <Typography variant="h5">{item.product_name}</Typography>
-                <Typography variant="h5">{ item.line_subtotal }€</Typography>
-            </CardContent>
-            
-            <CardActions>
-                <CircularProgress style={{display: isLoading? 'block' : 'none '}}/>
-                <Button type="button" size="small" onClick={clickMinus} disabled={isLoading} >-</Button>
-                <Typography>{item.quantity}</Typography>
-                <Button type="button" size="small" onClick={clickPlus } disabled={isLoading} >+</Button>
-                <Button variant="contained" type="button" color="secondary" onClick={clickRemove} disabled={isLoading} >Remove</Button>
-                
-            </CardActions>
-        </Card>
+        <Paper variant="outlined" className={styles.item} square >
+            <Typography variant="h5">{item.product_name}:&nbsp;</Typography>
+            <Typography variant="h5">{item.line_subtotal}€ </Typography>
+            <div className={styles.buttonwrapper}>
+                <IconButton onClick={() => removeItem(item.product_id)} disabled={isLoading}>
+                    <Remove />
+                </IconButton>
+                <Typography variant="h5">{item.quantity}</Typography>
+                <IconButton onClick={() => addItem(item.product_id)} disabled={isLoading}>
+                    <Add />
+                </IconButton>
+                <IconButton onClick={() => deleteItem(item.product_id)} disabled={isLoading}>
+                    <Clear />
+                </IconButton>
+            </div>
+        </Paper>
     )
 }
 

@@ -7,7 +7,10 @@ import Navbar from './../components/Navbar/Navbar'
 export default function Shop({products}){
     return(
         <>
-        <ShopPage products={products}/>
+        <Navbar />
+          <main>
+            <ShopPage products={products}/>
+          </main>        
         </>
     )
 }

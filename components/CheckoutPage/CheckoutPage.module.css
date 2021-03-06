@@ -1,0 +1,19 @@
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.formwrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.buttonwrapper{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+.button {
+    padding: 8px;
+}

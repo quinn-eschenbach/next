@@ -1,3 +1,15 @@
 .item{
+    padding: 8px;
+    width: 100%;
+    display: flex;
     margin-bottom: 10px;
+    align-items: center;
+}
+
+.buttonwrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    margin-left: auto;
 }

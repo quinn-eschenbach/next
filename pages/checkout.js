@@ -1,16 +1,16 @@
 import React from 'react'
-import { Typography } from "@material-ui/core";
 import Navbar from './../components/Navbar/Navbar'
+import CheckoutPage from './../components/CheckoutPage/CheckoutPage'
 
-const about = () => {
+const checkout = () => {
     return (
         <>
             <Navbar />
             <main>
-                <Typography variant="h1" > sind ehrenatzen schwöre </Typography>
+                <CheckoutPage />
             </main>
         </>
     )
 }
 
-export default about
+export default checkout

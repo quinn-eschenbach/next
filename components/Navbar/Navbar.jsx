@@ -8,7 +8,7 @@ import styles from './Navbar.module.css'
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
-    const {cart} = useCart()
+    const { itemCount } = useCart()
     const toggle = () => {
         setOpen(!open)
     }
@@ -21,7 +21,7 @@ const Navbar = () => {
                     <Link href="/shop"><Typography variant="h5" className={styles.item}>Shop</Typography></Link>
                     <Link href="/about"><Typography variant="h5" className={styles.item}>About</Typography></Link>
                     <IconButton id={styles.cartbutton} onClick={toggle}>
-                        <Badge color="secondary" badgeContent={cart.length} />
+                        <Badge color="secondary" badgeContent={itemCount} />
                         <ShoppingCart />
                     </IconButton>
                 </div>

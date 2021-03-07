@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Stepper, Step, StepLabel, Typography, Paper, Button } from '@material-ui/core'
+import { ProvideAdress } from "./../../lib/context/adress";
 import Adress from './Adress/Adress'
 import Order from './Order/Order'
 import Payment from './Payment/Payment'
@@ -12,7 +13,7 @@ const CheckoutPage = () => {
 
     const onNext = () => {
         const currentStep = activeStep
-        if (activeStep <= 2) {
+        if (activeStep < 3) {
             setActiveStep(currentStep + 1)
         }
     }
@@ -27,14 +28,14 @@ const CheckoutPage = () => {
     const renderElements = (i) => {
         switch (i) {
             case 0: return <Order />
-            case 1: return <Adress />
+            case 1: return <Adress setValid={setIsFormValid} />
             case 2: return <Payment />
             case 3: return <Success />
         }
     }
 
     return (
-        <>
+        <ProvideAdress>
             <div style={{ height: "20px" }} />
             <Paper variant="outlined" square className={styles.wrapper}>
                 <Stepper activeStep={activeStep}>
@@ -81,11 +82,8 @@ const CheckoutPage = () => {
                         </div>
                     )
                 }
-
-
-
             </Paper>
-        </>
+        </ProvideAdress>
     )
 }
 

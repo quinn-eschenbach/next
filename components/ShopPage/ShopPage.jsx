@@ -7,7 +7,7 @@ import styles from './ShopPage.module.css'
 
 const ShopPage = ({ products }) => {
     const [categories, setCategories] = useState([])
-    const [activeFilters, setActiveFilters] = useState([]) //[ "category1", "category2"]
+    const [activeFilters, setActiveFilters] = useState([]) 
     const [search, setSearch] = useState("")
 
     const router = useRouter()

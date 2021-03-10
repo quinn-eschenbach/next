@@ -29,8 +29,8 @@ const CheckoutPage = () => {
         switch (i) {
             case 0: return <Order />
             case 1: return <Adress setValid={setIsFormValid} />
-            case 2: return <Payment />
-            case 3: return <Success />
+            case 2: return <Payment setValid={setIsFormValid} />
+            case 3: return <Success setValid={setIsFormValid} />
         }
     }
 

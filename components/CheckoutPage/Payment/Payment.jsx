@@ -71,7 +71,7 @@ const Payment = ({ setValid }) => {
                     Router.push("/thankyou")
                 }
                 else {
-                    alert("PAyment errrrrorororo")
+                    console.log(error)
                 }
             }
             catch (error) { 

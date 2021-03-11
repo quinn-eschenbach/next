@@ -25,7 +25,7 @@ const Payment = ({ setValid }) => {
             card: elements.getElement(CardElement)
         })
         console.log(paymentMethod)
-        if (!error) {
+        if (!error && error != undefined) {
             try {
                 const { id } = paymentMethod
                 const response = await axios.post(`api/payment`, {

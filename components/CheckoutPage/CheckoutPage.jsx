@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import { Stepper, Step, StepLabel, Typography, Paper, Button } from '@material-ui/core'
-import { ProvideAdress } from "./../../lib/context/adress";
+import { ProvideAdress } from "./../../lib/context/adress"
+import { loadStripe } from '@stripe/stripe-js'
+import { Elements } from "@stripe/react-stripe-js";
 import Adress from './Adress/Adress'
 import Order from './Order/Order'
 import Payment from './Payment/Payment'
 import Success from './Success/Success'
 import styles from './CheckoutPage.module.css'
+
+const stripePromise = loadStripe("pk_test_51IT1gZHKZIrCsD6HfywGCBThiIfrIthJ5Rrc2U3zb1n4WZTmrt2qzWUF3Bb6qNsOgCY8c24nt88thMQUQq9dLb8U001dGMwHoV")
 
 const CheckoutPage = () => {
     const [activeStep, setActiveStep] = useState(0)
@@ -29,7 +33,11 @@ const CheckoutPage = () => {
         switch (i) {
             case 0: return <Order />
             case 1: return <Adress setValid={setIsFormValid} />
-            case 2: return <Payment setValid={setIsFormValid} />
+            case 2: return (
+                <Elements stripe={stripePromise}>
+                    <Payment setValid={setIsFormValid} />
+                </Elements>
+            )
             case 3: return <Success setValid={setIsFormValid} />
         }
     }

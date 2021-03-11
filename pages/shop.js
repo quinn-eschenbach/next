@@ -1,4 +1,3 @@
-import WooCommerceRestApi from '@woocommerce/woocommerce-rest-api'
 import {getProducts} from './../lib/api'
 import React, { useState, useEffect } from 'react'
 import ShopPage from '../components/ShopPage/ShopPage'

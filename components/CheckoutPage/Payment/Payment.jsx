@@ -24,14 +24,15 @@ const Payment = ({ setValid }) => {
             type: "card",
             card: elements.getElement(CardElement)
         })
-        console.log(paymentMethod)
-        if (!error && error != undefined) {
+        console.log(paymentMethod, error)
+        if (!error) {
             try {
                 const { id } = paymentMethod
                 const response = await axios.post(`api/payment`, {
                     amount: total.replace('.',''),
                     id
                 })
+                console.log(response)
                 if (response.data.success) {
                     const data = {
                         payment_method: "stripe",

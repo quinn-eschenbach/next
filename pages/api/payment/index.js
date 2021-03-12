@@ -13,12 +13,14 @@ export default async (req, res) => {
         })
         console.log("Payment Success", payment)
         res.json({
-            success: true
+            success: true,
+            payment
         })
     } catch (error) {
         console.log("Payment Error", error)
         res.json({
-            success: false
+            success: false,
+            error
         })
     }
 }

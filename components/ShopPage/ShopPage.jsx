@@ -77,65 +77,69 @@ const ShopPage = ({ products }) => {
 
 
     return (
-        <Grid className={styles.wrapper} container>
-            <Grid item xs={3}>
-                <Paper className={styles.filterWrapper} variant="outlined" square>
-                    <div className={styles.searchWrapper}>
-                        <TextField id="search" label="Suche" onChange={e => setSearch(e.target.value)} />
-                    </div>
-                    <FormGroup >
+        <>
+            <div style={{ height: 80 }} />
+            <Grid className={styles.wrapper} container>
+                <Grid item xs={3}>
+                    <Paper className={styles.filterWrapper} variant="outlined" square>
+                        <div className={styles.searchWrapper}>
+                            <TextField id="search" label="Suche" onChange={e => setSearch(e.target.value)} />
+                        </div>
+                        <FormGroup >
 
-                        {
-                            categories.map(category => (
-                                <Paper key={category} className={styles.checkBox} variant="outlined" square>
-                                    <FormControlLabel
-                                        label={category}
-                                        control={
-                                            <Checkbox onClick={e => filterClicked(e, category)} />
-                                        }
-                                    />
-                                </Paper>
-                            ))
-                        }
-
-                    </FormGroup>
-                </Paper>
-            </Grid>
-            <Grid item xs={9}>
-                <Paper className={styles.teaser} variant="outlined" square style={{ background: "linear-gradient(180deg, rgba(12,128,222,1) 0%, rgba(89,179,252,1) 100%)" }}>
-                    <Grid container>
-                        <Grid item xs={6} className={styles.teasercontent}>
-                            <Typography variant="h1">Shop</Typography>
-                            <Typography variant="h5" gutterBottom>Entdecke Hautverträgliche Pflegeprodukte oder nutze useren einzigartigen Produktefinder:</Typography>
-                            <Link href="/productfinder"><Button variant="contained" color="secondary" >jetzt Passendes Produkt finden</Button></Link>
-                        </Grid>
-                        <Grid item xs={6} >
-                            <div className={styles.teaserimage}></div>
-                        </Grid>
-                    </Grid>
-
-                </Paper>
-
-                <div className={styles.wrapperproducts}>
-
-                    <Grid container spacing={3} className={styles.productWrapper}>
-                        {products.map(product => {
-                            if (isFilterResult(product) && isSearchResult(product)) {
-                                return (
-                                    <Grid key={product.id} item xs={4}>
-                                        <ProductTeaser product={product} />
-                                    </Grid>
-                                )
+                            {
+                                categories.map(category => (
+                                    <Paper key={category} className={styles.checkBox} variant="outlined" square>
+                                        <FormControlLabel
+                                            label={category}
+                                            control={
+                                                <Checkbox onClick={e => filterClicked(e, category)} />
+                                            }
+                                        />
+                                    </Paper>
+                                ))
                             }
-                        })}
-                    </Grid>
-                </div>
+
+                        </FormGroup>
+                    </Paper>
+                </Grid>
+                <Grid item xs={9}>
+                    <Paper className={styles.teaser} variant="outlined" square style={{ background:"#9D0625"}}>
+                        <Grid container>
+                            <Grid item xs={6} className={styles.teasercontent}>
+                                <Typography variant="h1">Shop</Typography>
+                                <Typography variant="body1" gutterBottom>Entdecke Hautverträgliche Pflegeprodukte oder nutze useren einzigartigen Produktefinder:</Typography>
+                                <Link href="/productfinder"><Button variant="contained" color="secondary" >jetzt Passendes Produkt finden</Button></Link>
+                            </Grid>
+                            <Grid item xs={6} >
+                                <div className={styles.teaserimage}></div>
+                            </Grid>
+                        </Grid>
+
+                    </Paper>
+
+                    <div className={styles.wrapperproducts}>
+
+                        <Grid container spacing={3} className={styles.productWrapper}>
+                            {products.map(product => {
+                                if (isFilterResult(product) && isSearchResult(product)) {
+                                    return (
+                                        <Grid key={product.id} item xs={4}>
+                                            <ProductTeaser product={product} />
+                                        </Grid>
+                                    )
+                                }
+                            })}
+                        </Grid>
+                    </div>
+
+                </Grid>
+
+
 
             </Grid>
-
-
-
-        </Grid>
+        </>
+        
     )
 }
 

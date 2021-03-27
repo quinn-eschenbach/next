@@ -10,4 +10,7 @@ export default async (req, res) => {
         version: 'wc/v1'
     })    
     await api.post("orders", data)
+    res.json({
+        success: true
+    })
 }

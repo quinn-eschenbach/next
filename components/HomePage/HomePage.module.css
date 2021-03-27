@@ -1,3 +1,14 @@
+.header{
+    background-image: url("../../public/Frame1.png");
+    height: 100vh;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .aglaia{
     background-image: url("https://ageuta-cosmetics.com/wp-content/uploads/2021/01/beauty-face-woman-with-cosmetic-cream-face_118454-1034.jpg");
     height: 100%;
@@ -35,4 +46,12 @@
 
 .equilibrio:hover{
     box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+}
+
+.newapproach{
+    padding-left: calc(100% / 12);
+    padding-right: calc(100% / 12);
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #9D0625;
 }

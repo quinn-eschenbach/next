@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import { ThemeProvider } from '@material-ui/core'
+import {head as Head} from 'next'
 import theme from "./../styles/theme"
 import Navbar from './../components/Navbar/Navbar'
 import {ProvideCart} from './../lib/context/cart'

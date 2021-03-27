@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { IconButton, Button, Typography, Divider } from '@material-ui/core'
-import { ArrowBack } from '@material-ui/icons'
+import { Close } from '@material-ui/icons'
 import CartItem from './CartItem/CartItem'
 import styles from './Cart.module.css'
 import Link from 'next/link'
@@ -14,9 +14,9 @@ const Cart = ({ onClick }) => {
         <div className={styles.wrapper} >
             <div className={styles.cartHeader}>
                 <IconButton onClick={onClick}>
-                    <ArrowBack />
+                    <Close />
                 </IconButton>
-                <Typography variant="h2">Cart</Typography>
+                <Typography variant="h5">CART</Typography>
 
             </div>
             <Divider />
@@ -39,10 +39,7 @@ const Cart = ({ onClick }) => {
                     <>
                         <div className={styles.cartFooter}>
                             <Typography variant="h5">Total: {total}€</Typography>
-                            <div className={styles.buttonWrapper}>
-                                <Button variant="contained" color="secondary" onClick={() => removeAllItems()} >Clear</Button>
-                                <Link href="/checkout"><Button variant="contained" color="primary" style={{ marginLeft: "10px" }}>Zahlen und verschwinden</Button></Link>
-                            </div>
+                            <Link href="/checkout" style={{ outerWidth: "100%" }}><Button variant="contained" color="primary" >Checkout</Button></Link>
                         </div>
                         <Divider />
                     </>

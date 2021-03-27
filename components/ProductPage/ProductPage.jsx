@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Button, Typography, Grid, Snackbar, Paper } from '@material-ui/core'
 import { Check } from "@material-ui/icons";
 import Carousel from '@brainhubeu/react-carousel'
-import '@brainhubeu/react-carousel/lib/style.css'
 import { useCart } from './../../lib/context/cart'
 import styles from './ProductPage.module.css'
 
@@ -16,6 +15,7 @@ const ProductPage = ({ product }) => {
 
     return (
         <>
+        <div style={{ height: 80 }} />
             <Snackbar
                 anchorOrigin={{
                     vertical: "top",
@@ -27,7 +27,7 @@ const ProductPage = ({ product }) => {
             >
                 <Paper className={styles.snackbar} variant="outlined" square>
                     <Check/>
-                    <Typography variant="h6">
+                    <Typography variant="body1">
                         {`${product.name} hinzugefügt`}
                     </Typography>                    
                 </Paper>

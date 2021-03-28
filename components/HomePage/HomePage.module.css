@@ -1,4 +1,4 @@
-.header{
+.header {
     background-image: url("../../public/Frame1.png");
     height: 100vh;
     background-position: right top;
@@ -9,7 +9,7 @@
     justify-content: center;
 }
 
-.aglaia{
+.aglaia {
     background-image: url("https://ageuta-cosmetics.com/wp-content/uploads/2021/01/beauty-face-woman-with-cosmetic-cream-face_118454-1034.jpg");
     height: 100%;
     background-position: right top;
@@ -20,17 +20,16 @@
     transition: all 300ms;
 }
 
-.equilibrio{
+.equilibrio {
     background-image: url("https://ageuta-cosmetics.com/wp-content/uploads/2021/01/smiley-older-woman-using-moisturizer-her-face_23-2148672372.jpg");
     height: 100%;
     background-position: right top;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 10px;
-    transition: all 300ms;
 }
 
-.innerborder{
+.innerborder {
     /*border: 8px solid rgba(255, 255, 255, 0.1);*/
     padding: 10px;
     height: 100%;
@@ -40,18 +39,67 @@
     justify-content: flex-end;
 }
 
-.aglaia:hover{
+.aglaia:hover {
     box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
 }
 
-.equilibrio:hover{
+.equilibrio:hover {
     box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
 }
 
-.newapproach{
+.approachbackground {
+    background-position: center;
+    background-size: cover;
+    background-image: url("./../../public/frame2.png");
+    height: 61vh;
+    margin-top: -80px;
+    margin-left: 40px;
+    -webkit-box-shadow: -11px 17px 30px -7px rgba(0, 0, 0, 0.81);
+    box-shadow: -11px 17px 30px -7px rgba(0, 0, 0, 0.81);
+}
+
+.newapproach {
     padding-left: calc(100% / 12);
-    padding-right: calc(100% / 12);
-    padding-top: 80px;
-    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     background-color: #9D0625;
+}
+
+.aglaiateaser {
+    background-image: url("../../public/frame3.png");
+    height: 50vh;
+    height: 600px;
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+}
+
+.equillibrioteaser {
+    background-image: url("../../public/frame4.png");
+    height: 50vh;
+    height: 600px;
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+}
+
+.equillibrioteaser:hover {
+    -webkit-box-shadow: -11px 17px 30px -7px rgba(0, 0, 0, 0.81);
+    box-shadow: -11px 17px 30px -7px rgba(0, 0, 0, 0.81);
+    transition: box-shadow 300ms;
+}
+
+.aglaiateaser:hover {
+    -webkit-box-shadow: -11px 17px 30px -7px rgba(0, 0, 0, 0.81);
+    box-shadow: -11px 17px 30px -7px rgba(0, 0, 0, 0.81);
+    transition: box-shadow 300ms;
 }
